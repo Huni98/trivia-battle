@@ -1,0 +1,217 @@
+/* --- ALAP BEÁLLÍTÁSOK --- */
+body {
+  background-color: #f4f7f6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.trivia-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.trivia-card {
+  background-color: white;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 650px;
+  width: 100%;
+}
+
+.trivia-title {
+  font-size: 2.3rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+/* --- PROGRESS BAR & IDŐZÍTŐ --- */
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  color: #7f8c8d;
+  margin-bottom: 15px;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 10px;
+  background-color: #ecf0f1;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: #3498db;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.progress-bar-danger {
+  background-color: #e74c3c !important; /* Ha már kevés idő van hátra */
+}
+
+/* --- KÉRDÉSEK ÉS VÁLASZOK --- */
+.question-text {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  min-height: 60px;
+}
+
+.answers-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.answer-btn {
+  padding: 14px 20px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  background-color: #f8f9fa;
+  color: #2c3e50;
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.answer-btn:hover:not(:disabled) {
+  background-color: #e2e8f0;
+  border-color: #cbd5e1;
+  transform: translateY(-2px);
+}
+
+/* --- SZÍNKÓDOLT VÁLASZ ÁLLAPOTOK --- */
+.answer-btn.correct {
+  background-color: #27ae60 !important;
+  color: white !important;
+  border-color: #27ae60 !important;
+}
+
+.answer-btn.incorrect {
+  background-color: #e74c3c !important;
+  color: white !important;
+  border-color: #e74c3c !important;
+}
+
+/* --- MENÜ ÉS VEGYEŐ GOMBOK --- */
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.difficulty-btn {
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.difficulty-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.btn-easy { background-color: #27ae60; }
+.btn-medium { background-color: #f39c12; }
+.btn-hard { background-color: #c0392b; }
+.btn-restart { background-color: #3498db; margin-top: 20px; }
+
+/* --- LEADERBOARD & INPUT --- */
+.name-input {
+  width: 100%;
+  max-width: 300px;
+  padding: 12px;
+  font-size: 1rem;
+  border: 2px solid #bdc3c7;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  text-align: center;
+  transition: border-color 0.3s;
+}
+
+.name-input:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.leaderboard-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px auto;
+  text-align: left;
+  max-width: 400px;
+}
+
+.leaderboard-item {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f8f9fa;
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  border: 1px solid #e9ecef;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+/* Dobogós helyezések színezése */
+.leaderboard-item:nth-child(1) {
+  background-color: #f1c40f; /* Arany */
+  color: white;
+  border-color: #f1c40f;
+}
+
+.leaderboard-item:nth-child(2) {
+  background-color: #bdc3c7; /* Ezüst */
+  color: white;
+  border-color: #bdc3c7;
+}
+
+.leaderboard-item:nth-child(3) {
+  background-color: #cd7f32; /* Bronz */
+  color: white;
+  border-color: #cd7f32;
+}
+
+/* Letiltott gombok stílusa a kezdőképernyőn */
+.difficulty-btn:disabled {
+  background-color: #bdc3c7 !important;
+  cursor: not-allowed;
+  transform: none;
+  opacity: 0.6;
+}
+
+.warning-text {
+  color: #e74c3c;
+  font-size: 0.95rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
